@@ -1,0 +1,42 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Employee List</h2>
+  </div>
+  <div class="panel-body">
+    <table id="example" border="10" class="table table-striped table-bordered table-sm row-border hover" cellspacing="0"
+      width="100%">
+
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>PolicyType</th>
+          <th>PolicyNo</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>PolicyStatus</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees | async">
+          <td>{{employee.id}}</td>
+          <td>{{employee.firstname}}</td>
+          <td>{{employee.lastname}}</td>
+          <td>{{employee.policyType}}</td>
+          <td>{{employee.policyNo}}</td>
+          <td>{{employee.phone}}</td>
+          <td>{{employee.email}}</td>
+          <td>{{employee.policy_Status}}</td>
+
+          <td><button style='margin-right:16px' (click)="deleteEmployee(employee.id)"
+              class="btn btn-danger">Delete</button>
+            <button style='margin-right:16px' (click)="updateEmployee(employee)" class="btn btn-success"
+              style="margin-left: 10px">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<h3>Update Employee</h3>
+
+  <form (ngSubmit)="onSubmit()">
+    <div class="row"  *ngIf="showMsg">
+      <div class="col-xs-12">
+        <p class="alert alert-success">
+            <strong>Update Successfully!</strong> Please click here to EmployeesList!.
+    
+        </p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="firstname">FirstName</label>
+      <input type="text" class="form-control" id="firstname" required [(ngModel)]="employee.firstname" name="firstname">
+    </div>
+    <div class="form-group">
+        <label for="lastname">LastName</label>
+        <input type="text" class="form-control" id="lastname" required [(ngModel)]="employee.lastname" name="lastname">
+      </div>
+      <div class="form-group">
+        <label for="policyType">PolicyType</label>
+        <input type="text" class="form-control" id="PolicyType" required [(ngModel)]="employee.policyType" name="policyType">
+      </div>
+      <div class="form-group">
+        <label for="policyNo">PolicyNo</label>
+        <input type="number" class="form-control" id="policyNo" required [(ngModel)]="employee.policyNo" name="policyNo">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="text" class="form-control" id="phone" required [(ngModel)]="employee.phone" name="phone">
+      </div>
+
+    <div class="form-group">
+      <label for="email">Email Id</label>
+      <input type="email" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
+    </div>
+
+    
+    <div class="form-group">
+      <label for="policyStatus"> PolicyStatus</label>
+      <input type="text" class="form-control" id=" policy_Status" required [(ngModel)]="employee.policy_Status" name="policyStatus">
+    </div>
+<br>
+    <button class="btn btn-success">Submit</button>
+  </form>

@@ -1,0 +1,119 @@
+<!-- <h3>Create Employee</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstname">FirstName</label>
+      <input type="text" class="form-control" id="firstname" required [(ngModel)]="employee.firstname" name="firstname">
+    </div>
+    <div class="form-group">
+        <label for="lastname">LastName</label>
+        <input type="text" class="form-control" id="lastname" required [(ngModel)]="employee.lastname" name="name">
+      </div>
+      <div class="form-group">
+        <label for="policyType">PolicyType</label>
+        <input type="text" class="form-control" id="PolicyType" required [(ngModel)]="employee.policyType" name="name">
+      </div>
+      <div class="form-group">
+        <label for="policyNo">PolicyNo</label>
+        <input type="number" class="form-control" id="policyNo" required [(ngModel)]="employee.policyNo" name="name">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone number</label>
+        <input type="text" class="form-control" id="phone" required [(ngModel)]="employee.phone" name="phone">
+      </div>
+
+    <div class="form-group">
+      <label for="name">Email Id</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
+    </div>
+
+    
+    <div class="form-group">
+      <label for="name"> PolicyStatus</label>
+      <input type="text" class="form-control" id=" policy_Status" required [(ngModel)]="employee. policy_Status" name="department">
+    </div>
+<br>
+    <button class="btn btn-success">Submit</button>
+  </form>
+</div> -->
+
+
+
+
+
+
+
+<div class="card">
+  <h4 class="card-header">Register</h4>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input type="text" formControlName="firstname" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
+        <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+          <div *ngIf="f.firstname.errors.required">First Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" formControlName="lastname" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
+        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+          <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for=" policyType"> PolicyType</label>
+        <input type="text" formControlName="policyType" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.policyType.errors }" />
+        <div *ngIf="submitted && f. policyType.errors" class="invalid-feedback">
+          <div *ngIf="f.policyType.errors.required"> policy Type is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for=" policyNo"> Policy No</label>
+        <input type="number" formControlName="policyNo" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f. policyNo.errors }" />
+        <div *ngIf="submitted && f.  policyNo.errors" class="invalid-feedback">
+          <div *ngIf="f. policyNo.errors.required"> policy Type is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input type="text" formControlName="phone" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" />
+        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+          <div *ngIf="f.phone.errors.required">Phone is required</div>
+          <div *ngIf="f.password.errors.minlength">Phone must be at least 10 </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" formControlName="email" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="policy_Status">PolicyStatus</label>
+        <input type="text" formControlName="policy_Status" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.policy_Status.errors }" />
+        <div *ngIf="submitted && f.policy_Status.errors" class="invalid-feedback">
+          <div *ngIf="f.policy_Status.errors.required">Last Name is required</div>
+        </div>
+      </div>
+<br>
+      <div class="form-group">
+        <button class="btn btn-primary">
+        
+          Register
+        </button>
+      
+      </div>
+    </form>
+  </div>
+</div>
